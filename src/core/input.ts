@@ -13,7 +13,7 @@ export class Input {
   _target: any;
   _handlers: Array<() => void>;
 
-  constructor(target = window) {
+  constructor(target: any = window) {
     this.keys = new Set();
     this.virtualKeys = new Set();
     this.mouse = { dx: 0, dy: 0, locked: false };

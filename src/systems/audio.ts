@@ -124,7 +124,7 @@ export function audioSystem() {
       world.events.on('game:over', () => { playing = false; engine.setMuffled(true); });
       world.events.on('ui:click', ({ up = true } = {}) => synth.ui(when(), up));
 
-      world.events.on('audio:settings', ({ muted, musicVolume, sfxVolume } = {}) => {
+      world.events.on('audio:settings', ({ muted, musicVolume, sfxVolume }: any = {}) => {
         if (muted !== undefined) { engine.setMuted(muted); world.state.audio.muted = muted; }
         if (musicVolume !== undefined) { engine.setMusicVolume(musicVolume); world.state.audio.musicVolume = musicVolume; }
         if (sfxVolume !== undefined) { engine.setSfxVolume(sfxVolume); world.state.audio.sfxVolume = sfxVolume; }

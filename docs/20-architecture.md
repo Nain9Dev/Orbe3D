@@ -187,7 +187,7 @@ flowchart LR
 
 Same rules as `src/ui/`: no ECS, no Three.js, and the only permitted import is
 `src/config.ts`. The contract is documented in [24-audio.md](24-audio.md), and the reason
-there is a shared clock at all is [ADR-011](30-decisions/011-shared-musical-clock.md).
+there is a shared clock at all is [ADR-0011](30-decisions/ADR-0011-shared-musical-clock.md).
 
 **The clock is the interesting part.** It is what makes the models, the bloom and the
 music share a phase by construction rather than by coincidence — and it runs on an

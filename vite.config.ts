@@ -21,13 +21,17 @@ export default defineConfig({
   base: './', // relative paths so the build also runs from GitHub Pages
 
   server: {
+    host: '127.0.0.1',
     port: 5310,
     strictPort: true,
+    allowedHosts: ['orbe.localhost'],
   },
 
   preview: {
+    host: '127.0.0.1',
     port: 5311,
     strictPort: true,
+    allowedHosts: ['orbe.localhost'],
   },
 
   build: {

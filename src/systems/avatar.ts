@@ -30,7 +30,7 @@ export function avatarSystem() {
 
       for (const e of world.query('avatar', 'transform')) {
         const v = e.body?.velocity;
-        const state = {
+        const state: any = {
           speed: v ? Math.hypot(v.x, v.z) : 0,
           grounded: e.body?.grounded,
           yaw: e.transform.yaw,

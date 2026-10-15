@@ -182,7 +182,7 @@ Then the rule that decides how the whole game feels:
 This is stated as fiction — the Vacío has nothing to take from a spark that is already
 falling, it simply lets go of it near the last thing that was still holding — but it was
 decided as balance, against evidence. See
-[30-decisions/008-void-costs-resonance.md](30-decisions/008-void-costs-resonance.md) for
+[30-decisions/ADR-0008-void-costs-resonance.md](30-decisions/ADR-0008-void-costs-resonance.md) for
 the measurement that produced it.
 
 The consequence is a contract the player learns in one Ciclo, and it is worth stating in

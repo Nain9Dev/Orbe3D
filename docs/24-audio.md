@@ -130,7 +130,7 @@ work in four keys.
 ## 4. The beat clock
 
 The contract that ties the music to everything else. Full reasoning in
-[ADR-011](30-decisions/011-shared-musical-clock.md).
+[ADR-0011](30-decisions/ADR-0011-shared-musical-clock.md).
 
 ```ts
 world.state.beat = { bar, beat, sixteenth, phase, pulse, downbeat, bpm, intensity, live }

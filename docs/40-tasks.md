@@ -67,4 +67,4 @@ Detail in [`specs/025-resonance/tasks.md`](../specs/025-resonance/tasks.md).
 | T-025.H1 Check the tells against a colour-blindness simulation | `[H]` | Amber on dark plus a shape change plus a sound is likely enough, but it has not been verified. See `docs/11-open-questions.md` OQ-007. |
 | T-024.H2 Confirm the difficulty of Ciclos 8 – 15 by hand | `[H]` | The scripted agent in `docs/22-game-design.md` §7 is a floor, not a substitute for playing it. |
 | ~~T-024.F1 Off-screen telegraph indicator~~ | `[A]` | **Done** in spec 025 (T-025.14). |
-| T-024.F2 Remove `state.lives` | `[A]` | Deprecated mirror of `state.integrity`. Removal target: spec 026. |
+| ~~T-024.F2 Remove `state.lives`~~ | `[A]` | **Done**: deprecated mirror removed, consolidated on `state.integrity`. |

@@ -13,6 +13,13 @@ import { Events } from './events.js';
  * tocar el bucle principal.
  */
 export class World {
+  entities: Map<number, any>;
+  systems: any[];
+  events: Events;
+  state: Record<string, any>;
+  _nextId: number;
+  _toDestroy: Set<number>;
+
   constructor() {
     this.entities = new Map();   // id -> entidad
     this.systems = [];           // sistemas en orden de ejecución

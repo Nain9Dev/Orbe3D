@@ -153,7 +153,7 @@ presentation layer reads only from here.
 | `combo` | number | Resonancia |
 | `comboTimer` / `comboWindow` | number / 0..1 | Seconds left, and the same as a ratio for the HUD arc |
 | `dashRatio` | 0..1 | Impulso readiness |
-| `beat` | `{ bar, beat, sixteenth, phase, pulse, downbeat, bpm, intensity, live }` | The shared musical clock. Models, environment and interface all read it; see [ADR-011](30-decisions/011-shared-musical-clock.md). |
+| `beat` | `{ bar, beat, sixteenth, phase, pulse, downbeat, bpm, intensity, live }` | The shared musical clock. Models, environment and interface all read it; see [ADR-0011](30-decisions/ADR-0011-shared-musical-clock.md). |
 | `audio` | `{ ready, muted, musicVolume, sfxVolume }` | State of the aural layer |
 | `bestCombo` / `shattered` | number | Run statistics, for the end-of-run summary |
 | `dashing` | boolean | An Impulso is in flight |
@@ -169,14 +169,11 @@ presentation layer reads only from here.
 | `spawn` | `(world, name, opts) => entity` | Lets `enemy.ts` create bolts without importing the prefab registry, which is what keeps it testable in isolation |
 | `burst` | `(origin, hex, count, opts)` | Direct access to the particle pool |
 
-### 3.4 Deprecated
+### 3.4 Removed / Deprecated
 
-| Key | Replacement | Removal target |
+| Key | Replacement | Status |
 | :--- | :--- | :--- |
-| `state.lives` | `state.integrity` | Spec 026 |
-
-`lives` is kept as a mirror so console mods and older notes keep working. It is written
-everywhere `integrity` is written and read nowhere in the engine.
+| `state.lives` | `state.integrity` | Removed (T-024.F2). `state.integrity` is the single source of truth. |
 
 ---
 

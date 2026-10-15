@@ -161,7 +161,7 @@ export function hudSystem(engine, input) {
       powerup.sync(state.buff?.type ?? null, state.buff?.timeleft ?? 0);
 
       integrity.sync({
-        current: state.integrity ?? state.lives ?? 0,
+        current: state.integrity ?? 0,
         max: state.maxIntegrity ?? CONFIG.player.lives,
         shield: !!state.shield,
         critical: !!state.critical,

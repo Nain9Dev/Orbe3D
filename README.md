@@ -57,10 +57,12 @@ npm run dev
 
 | Comando | Qué hace |
 | :--- | :--- |
-| `npm run dev` | Servidor de desarrollo con recarga en caliente |
-| `npm test` | Suite completa (Vitest) |
-| `npm run build` | Compila a `dist/` |
-| `npm run preview` | Sirve el build de producción |
+| `npm run dev` | Servidor de desarrollo con recarga en caliente (`http://127.0.0.1:5310`) |
+| `npm run typecheck` | Verificación estricta de tipos TypeScript (`tsc --noEmit`) |
+| `npm test` | Suite de 201 pruebas unitarias y de integración (Vitest) |
+| `npm run build` | Compila el bundle de producción a `dist/` |
+| `npm run check` | Puerta de calidad completa: `typecheck` + `test` + `build` |
+| `npm run preview` | Previsualiza el build de producción (`http://127.0.0.1:5311`) |
 
 **Stack**: TypeScript · Vite · Three.js · Web Audio API · DOM plano para la interfaz.
 Está fijado en [`AGENTS.md`](AGENTS.md) y no se cambia sin un ADR aprobado.

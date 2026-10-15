@@ -50,7 +50,6 @@ export function buildLevel(world, n, { lives = CONFIG.player.lives } = {}) {
     ),
     integrity: player.player.lives,
     maxIntegrity: player.player.maxLives,
-    lives: player.player.lives,          // deprecated mirror, see docs/21-data-model.md
     critical: player.player.lives <= 1,
     shield: false,
     buff: null,

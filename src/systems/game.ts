@@ -228,7 +228,6 @@ function damage(world, player, source = null) {
 
   Object.assign(world.state, {
     integrity: result.state.current,
-    lives: result.state.current,          // deprecated mirror
     critical: isCritical(result.state),
   });
 

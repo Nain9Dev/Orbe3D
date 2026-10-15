@@ -402,7 +402,7 @@ export function createOrbi({ radius: r = 0.6, color = 0x6ee7ff, tier = 0 } = {})
     },
 
     /** Lo llama el sistema `avatar` en cada paso de lógica. */
-    update(dt, s = {}) {
+    update(dt, s: any = {}) {
       t += dt;
       const speed = s.speed ?? 0;
       const moving = speed > 0.5;
@@ -823,7 +823,7 @@ export function createHunter({ radius: r = 0.7, type = 'tracker', tier = 0 } = {
   return {
     group,
 
-    update(dt, s = {}) {
+    update(dt, s: any = {}) {
       t += dt;
       const speed = s.speed ?? 0;
       const dist = s.threat ?? Infinity;      // distancia al jugador
@@ -1112,7 +1112,7 @@ export function createDrone({ radius: r = 0.3 } = {}) {
   
   return {
     group,
-    update(dt, s = {}) {
+    update(dt, s: any = {}) {
       t += dt;
       mesh.rotation.y += dt * 2.0;
       mesh.rotation.x = Math.sin(t * 3.0) * 0.2;
@@ -1170,7 +1170,7 @@ export function createInterceptor({ radius: r = 0.5 } = {}) {
 
   return {
     group,
-    update(dt, s = {}) {
+    update(dt, s: any = {}) {
       t += dt;
       // Gira sobre su eje longitudinal al atacar
       const speed = s.speed ?? 0;
@@ -1288,7 +1288,7 @@ export function createBeacon({ radius: r = 1.1 } = {}) {
       if (kind === 'anchor') lit = 1;
     },
 
-    update(dt, s = {}) {
+    update(dt, s: any = {}) {
       t += dt;
       if (s.reached) lit = Math.min(1, lit + dt * 3);
 

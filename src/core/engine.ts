@@ -6,7 +6,18 @@
  * cambio de pestaña no provoque una "espiral de la muerte".
  */
 export class Engine {
-  constructor(world, { step = 1 / 60, maxFrame = 0.25 } = {}) {
+  world: any;
+  step: number;
+  maxFrame: number;
+  running: boolean;
+  time: number;
+  fps: number;
+  _accumulator: number;
+  _last: number;
+  _fpsTimer: number;
+  _fpsFrames: number;
+
+  constructor(world: any, { step = 1 / 60, maxFrame = 0.25 } = {}) {
     this.world = world;
     this.step = step;
     this.maxFrame = maxFrame;

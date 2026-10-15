@@ -23,7 +23,7 @@ import { powerupsSystem } from './systems/powerups.js';
  * Esta lista ES la definición del juego. Añadir una mecánica es añadir una
  * línea aquí; quitarla es borrarla. Nada más hay que tocar.
  */
-const canvas = document.getElementById('game');
+const canvas = document.getElementById('game') as HTMLCanvasElement;
 const input = new Input(canvas);
 const world = new World();
 const engine = new Engine(world);
@@ -36,7 +36,6 @@ Object.assign(world.state, {
   totalOrbs: 0,
   integrity: CONFIG.player.lives,
   maxIntegrity: CONFIG.player.lives,
-  lives: CONFIG.player.lives,   // deprecated mirror of `integrity`
   combo: 0,
   comboWindow: 0,
   dashRatio: 1,
@@ -65,7 +64,7 @@ world.addSystem(audioSystem());        // música procedural
 // Ratón: recuperar el bloqueo del puntero al hacer clic sobre el lienzo.
 // La pausa por teclado la gestiona `src/ui/menu.ts` (Escape), de forma que
 // también funciona en dispositivos sin puntero que bloquear.
-canvas.addEventListener('click', () => {
+canvas?.addEventListener('click', () => {
   if (world.state.status === 'playing') input.requestLock();
 });
 
@@ -79,4 +78,4 @@ document.addEventListener('pointerlockchange', () => {
 engine.start();
 
 // Punto de entrada para consola y mods: `GAME.world.addSystem(...)` en caliente.
-window.GAME = { world, engine, input, CONFIG };
+(window as any).GAME = { world, engine, input, CONFIG };

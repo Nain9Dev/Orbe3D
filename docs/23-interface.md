@@ -208,7 +208,7 @@ Screen-edge arrows for things that matter and are not on screen. Two sources, on
 mechanism: a Sombra winding up behind the camera, and the direction a hit came from.
 
 This is the last channel of the fairness contract in
-[ADR-012](30-decisions/012-the-tell-must-be-visible.md): the telegraph is guaranteed by
+[ADR-0012](30-decisions/ADR-0012-the-tell-must-be-visible.md): the telegraph is guaranteed by
 the simulation, drawn on the model, played from the Sombra's position — and this covers
 the case where the model is behind the player entirely.
 

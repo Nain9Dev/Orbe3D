@@ -250,7 +250,7 @@ The rule is now two lines, and it is teachable in one Ciclo:
 - **El Vacío takes the Resonancia.** That is what you lose by falling.
 
 Full rationale and measurements:
-[30-decisions/008-void-costs-resonance.md](30-decisions/008-void-costs-resonance.md).
+[30-decisions/ADR-0008-void-costs-resonance.md](30-decisions/ADR-0008-void-costs-resonance.md).
 
 ---
 
