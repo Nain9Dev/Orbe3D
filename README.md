@@ -1,52 +1,47 @@
 # Orbe Runner 3D
 
-**Jugar online: https://orbe.naindev.com**
+[![English](https://img.shields.io/badge/Language-English-blue?style=flat-square)](README.md)
+[![Español](https://img.shields.io/badge/Idioma-Espa%C3%B1ol-emerald?style=flat-square)](README.es.md)
+[![Play Online](https://img.shields.io/badge/Demo-orbe.naindev.com-0284c7?style=flat-square)](https://orbe.naindev.com)
+[![CI](https://github.com/Nain9Dev/orbe-runner-3d/actions/workflows/deploy.yml/badge.svg)](https://github.com/Nain9Dev/orbe-runner-3d/actions/workflows/deploy.yml)
+[![Ecosystem Status](https://img.shields.io/badge/status-100%25%20operational-success)](https://status.naindev.com)
+[![Engineering Handbook](https://img.shields.io/badge/paved%20road-Pure%20Math%20ECS-blue)](https://github.com/Nain9Dev/engineering-handbook)
+[![Cost](https://img.shields.io/badge/cost-0.00_%E2%82%AC-22c55e)](https://github.com/Nain9Dev/engineering-handbook/blob/main/governance/zero-cost-philosophy.md)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-informational)](LICENSE)
 
-Un runner 3D arcade hecho desde cero. Eres **Lúmen**, la última chispa de luz de un
-universo que el Vacío ya se ha comido. Cruzas un **Ciclo** tras otro recuperando
-**Fragmentos de Estrella**, esquivando **Sombras** y sobreviviendo con tres capas de
-Núcleo.
+**Play online: https://orbe.naindev.com**
 
-Cada Ciclo se compone solo, pero no al azar: se ensambla a partir de piezas escritas a
-mano, y hay una garantía matemática de que **todo salto de la ruta es posible**.
+A zero-engine 3D arcade runner written from scratch in TypeScript. You are **Lúmen**, the final spark of light across a universe swallowed by the Void. Traverse **Cycles**, recover **Star Shards**, evade **Shadows**, and survive with a three-layer Core.
 
-- **Sin motor de juego.** Física, IA, cámara, generación de niveles, HUD y audio son
-  código propio. La única dependencia es Three.js para dibujar.
-- **Sin assets.** Modelos, texturas, música y efectos se generan en tiempo de ejecución.
-  Cero bytes de imágenes o MP3.
-- **Sin backend.** Archivos estáticos servidos desde un CDN. Un clic y estás jugando.
-- **Open source, 0 € de coste.** MIT, herramientas libres de principio a fin.
+Levels are procedurally composed from curated geometric chunks, backed by a formal mathematical guarantee that **every traversal jump is physically reachable**.
 
-![vista previa](preview.png)
+- **Zero Game Engine:** Custom physics, collision detection, enemy state machines, procedural level composer, HUD, and synthesizer. Only Three.js is used for WebGL rasterization.
+- **Zero Static Assets:** 3D meshes, materials, music, and sound effects are synthesized in real-time at runtime. 0 MB of downloaded textures or audio clips.
+- **Zero Backend:** Static assets deployed to CDN via GitHub Pages. One click to play directly in browser.
+- **Zero Incremental Cost:** $0.00 infrastructure cost, fully open source under the MIT license.
+
+![preview](preview.png)
 
 ---
 
-## Jugar
+## Controls
 
-| Tecla | Acción |
+| Key | Action |
 | :--- | :--- |
-| `W A S D` / flechas | Moverse, relativo a la cámara |
-| `Espacio` | Saltar — mantén pulsado para saltar más alto |
-| `Shift` | **Impulso**: atraviesas el espacio, nada puede tocarte, y las Sombras frágiles se fracturan |
-| Ratón | Cámara |
-| `Esc` | Pausa |
+| `W A S D` / Arrows | Movement relative to camera orientation |
+| `Space` | Jump (variable height by hold duration) |
+| `Shift` | **Dash**: Phase through space, gain temporary invulnerability, and shatter fragile enemies |
+| Mouse | Orbit camera |
+| `Esc` | Pause / Settings menu |
 
-En móvil: joystick analógico a la izquierda, cámara a la derecha, y botones de salto e
-Impulso. Un toque rápido en la zona derecha también salta.
-
-### Las dos reglas que hay que aprender
-
-- **Las Sombras y el plasma se cobran el Núcleo.** Eso es lo que esquivas.
-- **El Vacío se cobra la Resonancia.** Caerte te devuelve a la última Baliza y te borra
-  la racha, pero no te cuesta una vida.
-
-El resto está en el **Registro**, dentro del propio juego.
+Mobile: On-screen left analog joystick, right camera swipe zone, dedicated Jump and Dash touch buttons.
 
 ---
 
-## Desarrollo
+## Development & Verification
 
-Requiere Node 18 o superior.
+Requires Node 18+.
 
 ```bash
 git clone https://github.com/Nain9Dev/orbe-runner-3d.git
@@ -55,160 +50,57 @@ npm install
 npm run dev
 ```
 
-| Comando | Qué hace |
+| Command | Description |
 | :--- | :--- |
-| `npm run dev` | Servidor de desarrollo con recarga en caliente (`http://127.0.0.1:5310`) |
-| `npm run typecheck` | Verificación estricta de tipos TypeScript (`tsc --noEmit`) |
-| `npm test` | Suite de 201 pruebas unitarias y de integración (Vitest) |
-| `npm run build` | Compila el bundle de producción a `dist/` |
-| `npm run check` | Puerta de calidad completa: `typecheck` + `test` + `build` |
-| `npm run preview` | Previsualiza el build de producción (`http://127.0.0.1:5311`) |
+| `npm run dev` | Development server with hot module reload (`http://127.0.0.1:5310`) |
+| `npm run typecheck` | Strict TypeScript compiler check (`tsc --noEmit`) |
+| `npm test` | Vitest test suite running 201 unit and integration tests |
+| `npm run build` | Compiles production distribution bundle to `dist/` |
+| `npm run check` | Unified quality gate: `typecheck` + `test` + `build` |
+| `npm run preview` | Production build preview server (`http://127.0.0.1:5311`) |
 
-**Stack**: TypeScript · Vite · Three.js · Web Audio API · DOM plano para la interfaz.
-Está fijado en [`AGENTS.md`](AGENTS.md) y no se cambia sin un ADR aprobado.
+**Core Stack:** Strict TypeScript · Vite · Three.js · Web Audio API · Vanilla DOM HUD. Pinned in [`AGENTS.md`](AGENTS.md).
 
 ---
 
-## Cómo está montado
+## Architectural Topology
 
-Un **ECS** (Entity–Component–System) de unas 200 líneas, y cuatro capas con una regla de
-dependencia estricta.
+Lightweight 200-line **ECS** (Entity–Component–System) organized into 4 decoupled layers:
 
 ```
 src/
-├── main.ts               # monta el mundo y enchufa los sistemas: esto ES el juego
-├── config.ts             # todos los números ajustables del "feel"
-│
-├── core/                 # motor genérico: no sabe qué es un orbe
-│   ├── world.ts          #   ECS: entidades, consultas, registro de sistemas
-│   ├── engine.ts         #   bucle de paso fijo (lógica) + dibujado por frame
-│   ├── events.ts         #   bus de eventos
-│   └── input.ts          #   teclado, ratón y táctil como estado consultable
-│
-├── domain/               # matemática pura, sin importar NADA
-│   ├── jump-arc.ts       #   hasta dónde llega un salto → alcanzabilidad de niveles
-│   └── integrity.ts      #   invariantes de la vida del jugador
-│
-├── game/                 # contenido
-│   ├── chunks.ts         #   biblioteca de piezas de nivel escritas a mano
-│   ├── composer.ts       #   Ciclo → plano verificable (datos puros)
-│   ├── level.ts          #   plano → entidades
-│   ├── prefabs.ts        #   catálogo de objetos
-│   └── models.ts         #   modelos procedurales
-│
-├── systems/              # lógica
-│   ├── player.ts         #   intención → velocidad
-│   ├── physics.ts        #   velocidad → posición + colisiones
-│   ├── enemy.ts          #   máquinas de estado de cada arquetipo
-│   ├── projectile.ts     #   proyectiles
-│   ├── triggers.ts       #   contactos → eventos de juego
-│   ├── game.ts           #   las reglas: Fragmentos, Núcleo, Ciclos
+├── main.ts               # World bootstrap, system registration, and game loop
+├── config.ts             # Central tunable parameters and kinematics constants
+├── core/                 # Engine agnostic primitives (zero domain knowledge)
+│   ├── world.ts          #   ECS: entity registry, queries, archetype storage
+│   ├── engine.ts         #   Fixed timestep loop (1/60s physics) + variable render step
+│   ├── events.ts         #   Strongly-typed event bus
+│   └── input.ts          #   Keyboard, pointer, and touch input polling state
+├── domain/               # Pure mathematics without framework dependencies
+│   ├── jump-arc.ts       #   Kinematic jump trajectory solver → reachability verification
+│   └── integrity.ts      #   Core health and shield invariants
+├── game/                 # Content definitions
+│   ├── chunks.ts         #   Geometric level chunk library
+│   ├── composer.ts       #   Procedural level composer (Cycle → verifiable blueprint)
+│   ├── level.ts          #   Blueprint → entity instantiator
+│   ├── prefabs.ts        #   Entity archetypes and prefabs
+│   └── models.ts         #   Procedural geometry generators
+├── systems/              # Execution logic
+│   ├── player.ts         #   Player input intent → velocity vectors
+│   ├── physics.ts        #   Velocity → position + AABB / sphere collision resolution
+│   ├── enemy.ts          #   Archetype state machines
+│   ├── triggers.ts       #   Spatial triggers → game events
+│   ├── game.ts           #   Core gameplay rules: Shards, Core state, Cycle completion
 │   ├── camera.ts, render.ts, audio.ts, particles.ts, avatar.ts, powerups.ts
-│   └── hud.ts            #   enlace mundo → interfaz, y nada más
-│
-└── ui/                   # presentación: sólo DOM, cero conocimiento del juego
-    ├── health.ts         #   Integridad del Núcleo
-    ├── widgets.ts        #   Impulso, Resonancia, progreso, avisos
-    ├── screen.ts         #   viñetas a pantalla completa
-    └── menu.ts           #   menús, ajustes, Registro
-```
-
-Cada frame:
-
-```
-entrada → sistemas de lógica (paso fijo 1/60) → eventos → dibujado
-```
-
-El paso fijo hace que la física se comporte igual a 30 que a 144 FPS.
-
-### Dos ideas que merece la pena entender
-
-**Los niveles se verifican antes de existir.** `composer.ts` convierte un número de Ciclo
-en un *plano*: objetos planos, sin Three.js y sin ECS. Eso permite comprobar treinta
-Ciclos de diseño de nivel en milisegundos — que todo salto sea alcanzable, que no haya
-tres piezas tensas seguidas, que haya checkpoint — antes de instanciar una sola entidad.
-
-**El alcance del salto se deriva, no se escribe.** `domain/jump-arc.ts` calcula la
-distancia máxima de salto a partir de la gravedad, el impulso y la velocidad. El
-compositor la usa para dimensionar cada hueco. Si mañana cambias la gravedad, todos los
-niveles del juego se reajustan solos.
-
----
-
-## Cómo se amplía
-
-**Un objeto nuevo** (`src/game/prefabs.ts`):
-
-```ts
-definePrefab('trampolin', ({ position }) => ({
-  tag: 'trampolin',
-  transform: { position: position.clone(), yaw: 0 },
-  solid: { size: new THREE.Vector3(3, 0.5, 3) },
-  bounce: { force: 18 },
-  render: { mesh: mesh(GEO.box, MAT.platform, new THREE.Vector3(3, 0.5, 3)) },
-}));
-```
-
-**Una pieza de nivel nueva** (`src/game/chunks.ts`): una entrada más en el array, con su
-intensidad y su Ciclo mínimo. El compositor la usará sola, y los tests comprobarán su
-alcanzabilidad sin que escribas nada.
-
-**Una mecánica nueva**: un sistema que filtre por su componente, y una línea en
-`src/main.ts`. Ni el motor, ni el render, ni la física se enteran.
-
-**Ajustar el "feel"**: todo está en `src/config.ts`, y el *porqué* de cada número está en
-[`docs/22-game-design.md`](docs/22-game-design.md).
-
-**Probar en caliente**: en la consola del navegador tienes `GAME`.
-
-```js
-GAME.CONFIG.player.jump = 20;
-GAME.world.removeSystem('enemy');    // modo paseo
-GAME.world.state.status;             // 'playing' | 'paused' | 'gameover' | ...
+│   └── hud.ts            #   DOM HUD bridge
+└── ui/                   # Vanilla DOM presentation layer
+    ├── health.ts         #   Core integrity status
+    ├── widgets.ts        #   Dash, resonance, and progression indicators
+    └── menu.ts           #   Pause menu, settings, and lore log
 ```
 
 ---
 
-## Documentación
+## License
 
-El proyecto sigue un flujo dirigido por especificación. La constitución está en
-[`AGENTS.md`](AGENTS.md); el mapa completo, en [`docs/README.md`](docs/README.md).
-
-| Si quieres saber | Lee |
-| :--- | :--- |
-| Cómo se llama cada cosa y por qué | [`docs/20-lore.md`](docs/20-lore.md) |
-| Por qué un número es ese número | [`docs/22-game-design.md`](docs/22-game-design.md) |
-| Qué puede leer la interfaz y cómo lo pinta | [`docs/23-interface.md`](docs/23-interface.md) |
-| En qué capa va un cambio | [`docs/20-architecture.md`](docs/20-architecture.md) |
-| Por qué el código tiene esta forma | [`docs/30-decisions/`](docs/30-decisions/) |
-| Si un requisito está realmente demostrado | [`docs/50-traceability.md`](docs/50-traceability.md) |
-
----
-
-## Publicarlo en internet
-
-Es HTML estático, así que cualquier hosting gratuito aguanta de sobra. El repo está
-preparado para **GitHub Pages**: `CNAME` apunta a `orbe.naindev.com`, `.nojekyll` evita
-que Pages lo procese con Jekyll, y el workflow de `.github/workflows/` republica en cada
-push a `main`.
-
-Una sola vez:
-
-1. **Settings → Pages → Source: GitHub Actions**.
-2. En el DNS de `naindev.com`:
-
-   | Tipo | Nombre | Valor |
-   | :--- | :--- | :--- |
-   | CNAME | `orbe` | `nain9dev.github.io` |
-
-3. Cuando GitHub emita el certificado, marca **Enforce HTTPS**. Hace falta HTTPS para que
-   funcione el bloqueo del puntero.
-
-Sin dominio propio queda en `https://nain9dev.github.io/orbe-runner-3d/` (borra `CNAME`).
-
----
-
-## Licencia
-
-MIT — ver [`LICENSE`](LICENSE). Usa [Three.js](https://threejs.org) (MIT) como única
-dependencia de ejecución.
+MIT — see [`LICENSE`](LICENSE). Powered by [Three.js](https://threejs.org) (MIT).
