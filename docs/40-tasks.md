@@ -59,6 +59,21 @@ Detail in [`specs/025-resonance/tasks.md`](../specs/025-resonance/tasks.md).
 
 **Verification:** `npm test` → 11 files, 200 tests, all passing. `npm run build` clean.
 
+## Spec next — Attract mode
+
+Detail in [`specs/next-attract-mode/tasks.md`](../specs/next-attract-mode/tasks.md).
+
+| Task | Label | Covers | State |
+| :--- | :--- | :--- | :--- |
+| T-AM.01 Attract tests first | `[A]` | REQ-AM.01 … .06 | Done |
+| T-AM.02 Autopilot system | `[A]` | REQ-AM.01, .02, .04, .05, .06 | Done |
+| T-AM.03 Fall left to the autopilot | `[A]` | REQ-AM.02, .03 | Done |
+| T-AM.04 Overlay and Ciclo card | `[A]` | REQ-AM.07 | Done |
+| T-AM.05 Browser verification and captures | `[A]` | REQ-AM.04, .05, .07 | Done |
+| T-AM.06 Documentation | `[A]` | — | Done |
+
+**Verification:** `npm run check` → typecheck clean, 12 files, 210 tests, build clean.
+
 ## Open
 
 | Task | Label | Notes |

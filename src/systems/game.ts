@@ -74,8 +74,10 @@ export function gameSystem() {
       world.events.on('player:hit', ({ player, source }) => damage(world, player, source));
 
       world.events.on('body:fell', (entity) => {
-        if (entity.player) fall(world, entity);
-        else world.destroy(entity);
+        if (!entity.player) world.destroy(entity);
+        // Behind the title the autopilot restarts its own run: no toast, no
+        // vignette, nothing to lose (REQ-AM.02).
+        else if (world.state.status !== 'attract') fall(world, entity);
       });
 
       world.events.on('game:start', ({ level = 1, lives = CONFIG.player.lives } = {}) => {

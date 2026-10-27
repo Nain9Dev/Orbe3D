@@ -133,7 +133,8 @@ presentation layer reads only from here.
 
 | Key | Type | Meaning |
 | :--- | :--- | :--- |
-| `status` | `'menu'\|'playing'\|'paused'\|'levelup'\|'gameover'` | The state machine of the run |
+| `status` | `'menu'\|'attract'\|'playing'\|'paused'\|'levelup'\|'gameover'` | The state machine of the run. `attract` is the autopilot behind the title: every system that gates on `playing` stays inert |
+| `attract` | boolean | True while the Ciclo on screen was built by the autopilot; cleared on `game:start`. The autopilot accepts only the `level:built` that carries it |
 | `level` | number | Current Ciclo |
 | `collected` / `totalOrbs` | number | Fragmentos taken and in the Ciclo |
 | `score` | number | **Luz** — the sum of Fragmento values plus 5 per shattered Sombra |

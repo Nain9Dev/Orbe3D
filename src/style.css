@@ -830,6 +830,19 @@ html, body {
   display: none;
 }
 
+/* Attract mode: the autopilot runs behind the panel, so the backdrop steps
+   aside. The panel keeps its own glass, so legibility does not depend on this. */
+#overlay.attract {
+  background: radial-gradient(ellipse at center, rgba(3, 5, 20, 0.18) 0%, rgba(1, 2, 10, 0.55) 100%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* A brighter track behind the glass needs a touch more glass under the text. */
+#overlay.attract .panel {
+  background: rgba(6, 10, 24, 0.6);
+}
+
 .panel {
   position: relative;
   width: min(520px, 92vw);

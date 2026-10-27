@@ -126,3 +126,18 @@ EARS patterns:
 | REQ-025.26 | When Lúmen takes damage from a source with a position, the HUD shall show a directional indicator. | 025 | Proposed |
 | REQ-025.27 | When a run ends, the overlay shall present a summary of the run. | 025 | Proposed |
 | REQ-025.28 | When a Ciclo starts, the HUD shall present a brief intro card naming it. | 025 | Proposed |
+
+## First screen (spec next — attract mode)
+
+Numbered `REQ-AM.xx` until the merge train assigns the spec number. Detail in
+[`specs/next-attract-mode/spec.md`](../specs/next-attract-mode/spec.md).
+
+| ID | Requirement | Source spec | Status |
+| :--- | :--- | :--- | :--- |
+| REQ-AM.01 | When the page loads and no run is in progress, the system shall build Ciclo 1 behind the title panel, so the first screen shows the track and its Sombras. | next | Proposed |
+| REQ-AM.02 | While the title panel is shown and the attract run is active, Lúmen shall follow the Ciclo 1 route on its own, jumping its gaps, and shall return to the origin when the route ends or when it falls into the Vacío. | next | Proposed |
+| REQ-AM.03 | While the attract run is active, the system shall not collect Fragmentos, take damage, build Resonancia or change the score, and the Sombras shall stay idle. | next | Proposed |
+| REQ-AM.04 | If the user agent reports `prefers-reduced-motion: reduce`, then the attract run shall not drive Lúmen; the built track is shown still. | next | Proposed |
+| REQ-AM.05 | While the document is hidden, the attract run shall not advance, and it shall resume when the document becomes visible again. | next | Proposed |
+| REQ-AM.06 | When the player activates JUGAR, the system shall start the run exactly as before, and keyboard, mouse and touch input shall have no effect on Lúmen while the attract run is active. | next | Proposed |
+| REQ-AM.07 | While the attract run is active, the overlay shall let the scene read through behind the panel without reducing the legibility of the panel itself. | next | Proposed |

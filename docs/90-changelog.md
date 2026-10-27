@@ -3,6 +3,16 @@
 Relevant changes, newest first. Format: `## [version] - YYYY-MM-DD` with Added / Changed /
 Fixed / Removed sections.
 
+## [Unreleased] — Spec next, *Attract mode*
+
+### Added
+
+- **The first screen shows the game.** Ciclo 1 is built at page load and Lúmen runs its
+  route on its own behind the title until JUGAR is pressed (`src/systems/attract.ts`,
+  status `attract`). Nothing is collected, scored or lost meanwhile; the run holds under
+  `prefers-reduced-motion` and while the tab is hidden. The overlay backdrop steps aside
+  during the attract run so the track reads through.
+
 ## [Unreleased] — Spec 025, *Resonancia*
 
 ### Fixed
