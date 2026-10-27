@@ -67,6 +67,7 @@ export function createMenu(callbacks: MenuCallbacks) {
   const hint = document.getElementById('panel-hint');
 
   const pending = { level: clampLevel(parseInt(readStore(KEYS.level, '1'), 10)) };
+  let attractOn = false;
 
   /* ------------------------------ settings ------------------------------- */
 
@@ -235,6 +236,16 @@ export function createMenu(callbacks: MenuCallbacks) {
     hide() {
       overlay?.classList.add('hidden');
       touch?.classList.remove('hidden');
+    },
+
+    /**
+     * While the autopilot runs behind the panel the backdrop steps aside so the
+     * scene reads through; the panel keeps its own glass (REQ-AM.07).
+     */
+    setAttract(on: boolean) {
+      if (on === attractOn) return;
+      attractOn = on;
+      overlay?.classList.toggle('attract', on);
     },
   };
 

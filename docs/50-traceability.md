@@ -3,7 +3,7 @@
 Every requirement and the test that proves it. **A requirement with no passing test is not
 done**, whatever the code says.
 
-Last full run: `npm test` → **11 files, 200 tests, all passing.**
+Last full run: `npm test` → **12 files, 210 tests, all passing.**
 
 ## Physics — `tests/physics.test.ts`
 
@@ -112,6 +112,19 @@ Last full run: `npm test` → **11 files, 200 tests, all passing.**
 | REQ-025.26 | `marks a damage bearing distinctly from a telegraph`, `ignores a nonsense bearing` | unit |
 | REQ-025.27 | `renders one row per statistic and replaces the hint line`, `stays hidden for an ordinary message` | unit |
 | REQ-025.28 | `names the Ciclo and its tier`, `covers every palette tier`, `hides on demand and degrades without a root` | unit |
+
+## First screen — `tests/attract.test.ts`
+
+Runs the real `buildLevel`, `physicsSystem` and `gameSystem` under the autopilot.
+
+| Requirement | Test | Type |
+| :--- | :--- | :--- |
+| REQ-AM.01 | `builds Ciclo 1 from the menu and switches to attract`, `leaves the menu alone when a run is already in progress` | integration |
+| REQ-AM.02 | `moves Lúmen along the route on its own`, `completes the Ciclo 1 route and loops back without falling`, `restarts at the origin when it falls, without the void toast` | integration |
+| REQ-AM.03 | `never touches the score, the Fragmentos, the Resonancia or the Núcleo` | integration |
+| REQ-AM.04 | `holds still under prefers-reduced-motion` | integration |
+| REQ-AM.05 | `holds while the document is hidden and resumes when visible` | integration |
+| REQ-AM.06 | `hands over to game:start untouched` | integration |
 
 ## Not covered by an automated test
 

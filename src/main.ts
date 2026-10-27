@@ -5,6 +5,7 @@ import { CONFIG } from './config.js';
 
 import { renderSystem } from './systems/render.js';
 import { playerSystem } from './systems/player.js';
+import { attractSystem } from './systems/attract.js';
 import { enemySystem, interceptorSystem, droneSystem } from './systems/enemy.js';
 import { physicsSystem } from './systems/physics.js';
 import { triggerSystem, shockwaveSystem } from './systems/triggers.js';
@@ -46,6 +47,7 @@ Object.assign(world.state, {
 
 world.addSystem(renderSystem(canvas)); // escena, luces y cámara
 world.addSystem(playerSystem(input));  // intención del jugador -> velocidad
+world.addSystem(attractSystem());      // autopilot behind the title until JUGAR
 world.addSystem(enemySystem());        // IA -> velocidad
 world.addSystem(interceptorSystem());
 world.addSystem(droneSystem());

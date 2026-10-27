@@ -66,6 +66,7 @@ flowchart TD
     subgraph S["2 · Services — src/systems/"]
         hud["hud.ts — binder"]
         player["player.ts"]
+        attract["attract.ts — autopilot behind the title"]
         physics["physics.ts"]
         enemy["enemy.ts"]
         projectile["projectile.ts"]
@@ -139,6 +140,7 @@ Order is meaningful; this is the pipeline, in `src/main.ts`:
 | :--- | :--- | :--- | :--- |
 | 1 | `render` | — | `state.three` (init only) |
 | 2 | `player` | input, `state.cameraYaw` | `body.velocity`, `state.dash*` |
+| 2b | `attract` | `blueprint.path`, solids, visibility and motion preferences | `body.velocity`, `player:jump`, `state.status` (`attract` while the autopilot runs behind the title) |
 | 3 | `enemy` | player position | Sombra velocities, telegraph events |
 | 4 | `interceptor` | player position | Interceptor velocity |
 | 5 | `drone` | player, Sombras | Dron velocity, `enemy:hit` |

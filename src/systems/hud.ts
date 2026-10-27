@@ -70,12 +70,13 @@ export function hudSystem(engine, input) {
 
   // Last written values, so the binder touches the DOM only on a real change.
   const shown = { level: -1, fps: -1, light: -1 };
+  let menu: ReturnType<typeof createMenu> | null = null;
 
   return {
     name: 'hud',
 
     init(world) {
-      const menu = createMenu({
+      menu = createMenu({
         onStart: (pending) => {
           input.requestLock();
           world.events.emit('game:start', pending);
@@ -94,9 +95,9 @@ export function hudSystem(engine, input) {
         onAudio: (settings) => world.events.emit('audio:settings', settings),
       });
 
-      world.events.on('ui:message', (payload) => { toasts.clear(); menu.message(payload); });
-      world.events.on('ui:pause', () => menu.pause());
-      world.events.on('ui:hide', () => { fx.reset(); menu.hide(); });
+      world.events.on('ui:message', (payload) => { toasts.clear(); menu?.message(payload); });
+      world.events.on('ui:pause', () => menu?.pause());
+      world.events.on('ui:hide', () => { fx.reset(); menu?.hide(); });
       world.events.on('ui:toast', ({ text, tone }) => toasts.push(text, tone));
 
       world.events.on('player:damaged', ({ shielded, lost, critical, from }) => {
@@ -172,6 +173,7 @@ export function hudSystem(engine, input) {
       fx.setDashing(!!state.dashing);
 
       compass.sync(state.status === 'playing' ? offscreenTells(world) : []);
+      menu?.setAttract(state.status === 'attract');
     },
   };
 }
