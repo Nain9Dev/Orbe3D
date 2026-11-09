@@ -3,6 +3,20 @@
 Relevant changes, newest first. Format: `## [version] - YYYY-MM-DD` with Added / Changed /
 Fixed / Removed sections.
 
+## [Unreleased] — Spec next, *SEO baseline*
+
+### Added
+
+- Canonical link, `og:site_name`, social image size, Twitter title, description and image,
+  author link and `SoftwareApplication`/`VideoGame` JSON-LD in `index.html`.
+- `public/robots.txt`, `public/sitemap.xml` and `public/llms.txt`, published at the site root.
+
+### Fixed
+
+- **The social preview image returned 404.** `og:image` pointed to `preview.png`, which lives at the
+  repository root and was never part of `dist/`. A copy now ships from `public/`.
+- The meta description was 172 characters; it is now 143.
+
 ## [Unreleased] — Spec next, *Attract mode*
 
 ### Added
