@@ -126,6 +126,16 @@ Runs the real `buildLevel`, `physicsSystem` and `gameSystem` under the autopilot
 | REQ-AM.05 | `holds while the document is hidden and resumes when visible` | integration |
 | REQ-AM.06 | `hands over to game:start untouched` | integration |
 
+## Discoverability — `tests/seo.test.ts`
+
+| Requirement | Test | Type |
+| :--- | :--- | :--- |
+| REQ-SEO.01 | `has exactly one canonical link equal to the host root`, `has one description of 70 to 160 characters` | static |
+| REQ-SEO.02 | `declares Open Graph and Twitter card metadata that agree with the canonical`, `publishes the social image it names` | static |
+| REQ-SEO.03 | `links the author` | static |
+| REQ-SEO.04 | `embeds JSON-LD that parses and references the author by id` | static |
+| REQ-SEO.05 | `robots.txt allows everything and advertises the sitemap`, `sitemap.xml lists only the canonical root`, `llms.txt starts with an H1 ...` | static |
+
 ## Not covered by an automated test
 
 Recorded honestly rather than claimed.

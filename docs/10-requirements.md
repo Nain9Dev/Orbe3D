@@ -141,3 +141,15 @@ Numbered `REQ-AM.xx` until the merge train assigns the spec number. Detail in
 | REQ-AM.05 | While the document is hidden, the attract run shall not advance, and it shall resume when the document becomes visible again. | next | Proposed |
 | REQ-AM.06 | When the player activates JUGAR, the system shall start the run exactly as before, and keyboard, mouse and touch input shall have no effect on Lúmen while the attract run is active. | next | Proposed |
 | REQ-AM.07 | While the attract run is active, the overlay shall let the scene read through behind the panel without reducing the legibility of the panel itself. | next | Proposed |
+
+## Discoverability (spec next — SEO baseline)
+
+Numbered `REQ-SEO.xx` until the merge train assigns the spec number. Vite copies `public/` to the root of `dist/`, which the Pages workflow publishes.
+
+| ID | Requirement | Source spec | Status |
+| :--- | :--- | :--- | :--- |
+| REQ-SEO.01 | When a crawler fetches the site root, the page shall carry one canonical link equal to `https://orbe.naindev.com/` and one meta description of 70 to 160 characters. | next | Proposed |
+| REQ-SEO.02 | When a link to the site is shared, the page shall provide Open Graph and Twitter `summary_large_image` metadata whose URL equals the canonical, and the image it names shall be published with the site. | next | Proposed |
+| REQ-SEO.03 | The page shall link its author with `rel="author"`. | next | Proposed |
+| REQ-SEO.04 | When a search or AI engine reads the page, it shall find `SoftwareApplication` and `VideoGame` JSON-LD that names the author by `@id` and links the source repository. | next | Proposed |
+| REQ-SEO.05 | When a crawler requests `/robots.txt`, the site shall allow everything and advertise `/sitemap.xml`, which lists only the root; `/llms.txt` shall be an English Markdown summary with links to the game, the repository and the author's site. | next | Proposed |

@@ -74,6 +74,16 @@ Detail in [`specs/next-attract-mode/tasks.md`](../specs/next-attract-mode/tasks.
 
 **Verification:** `npm run check` → typecheck clean, 12 files, 210 tests, build clean.
 
+## Spec next — SEO baseline
+
+| Task | Label | Covers | State |
+| :--- | :--- | :--- | :--- |
+| T-SEO.01 `tests/seo.test.ts` written first and seen failing | `[A]` | REQ-SEO.01 … .05 | Done |
+| T-SEO.02 Page metadata and JSON-LD in `index.html` | `[A]` | REQ-SEO.01 … .04 | Done |
+| T-SEO.03 `public/` with `robots.txt`, `sitemap.xml`, `llms.txt` and `preview.png` | `[A]` | REQ-SEO.02, .05 | Done |
+
+**Verification:** `npm run check` → typecheck clean, 13 files, 219 tests, build clean; `dist/` holds the four files.
+
 ## Open
 
 | Task | Label | Notes |
