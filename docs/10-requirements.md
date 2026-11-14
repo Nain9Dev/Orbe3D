@@ -153,3 +153,8 @@ Numbered `REQ-SEO.xx` until the merge train assigns the spec number. Vite copies
 | REQ-SEO.03 | The page shall link its author with `rel="author"`. | next | Proposed |
 | REQ-SEO.04 | When a search or AI engine reads the page, it shall find `SoftwareApplication` and `VideoGame` JSON-LD that names the author by `@id` and links the source repository. | next | Proposed |
 | REQ-SEO.05 | When a crawler requests `/robots.txt`, the site shall allow everything and advertise `/sitemap.xml`, which lists only the root; `/llms.txt` shall be an English Markdown summary with links to the game, the repository and the author's site. | next | Proposed |
+| REQ-PWA.01 | The site shall publish `manifest.webmanifest` at its root with `id`, `start_url` and `scope` `./`, `display` `standalone`, `name` `Orbe Runner 3D`, `short_name` `Orbe Runner`, `lang` `es`, `dir` `ltr` and no `prefer_related_applications`. | next-pwa-install | Proposed |
+| REQ-PWA.02 | The manifest shall reuse the page meta description verbatim, with `theme_color` equal to the page `theme-color` meta and `background_color` `#030514`, as literal `#rrggbb`. | next-pwa-install | Proposed |
+| REQ-PWA.03 | The manifest shall declare three PNG icons that exist at the declared size (192 and 512 `any`, 512 `maskable`, one purpose each); `icons/apple-touch-icon.png` shall be 180 px and opaque. | next-pwa-install | Proposed |
+| REQ-PWA.04 | When the page is served, it shall link the manifest and the Apple touch icon and carry the standalone and iOS web app meta tags, with status bar style `black`. | next-pwa-install | Proposed |
+| REQ-PWA.05 | The site shall register no service worker and ship no cache or offline page. | next-pwa-install | Proposed |
