@@ -136,6 +136,16 @@ Runs the real `buildLevel`, `physicsSystem` and `gameSystem` under the autopilot
 | REQ-SEO.04 | `embeds JSON-LD that parses and references the author by id` | static |
 | REQ-SEO.05 | `robots.txt allows everything and advertises the sitemap`, `sitemap.xml lists only the canonical root`, `llms.txt starts with an H1 ...` | static |
 
+## Installable site — `tests/pwa-install.test.ts`
+
+| Requirement | Test | Type |
+| :--- | :--- | :--- |
+| REQ-PWA.01 | `declares the installable members with the approved names` | static |
+| REQ-PWA.02 | `reuses the page description and colours` | static |
+| REQ-PWA.03 | `declares PNG icons that exist at the declared size, one purpose each`, `ships a 180 px Apple touch icon` | static |
+| REQ-PWA.04 | `links the manifest and the Apple touch icon`, `carries the standalone and iOS tags` | static |
+| REQ-PWA.05 | `registers no service worker` | static |
+
 ## Not covered by an automated test
 
 Recorded honestly rather than claimed.

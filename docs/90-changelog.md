@@ -3,6 +3,13 @@
 Relevant changes, newest first. Format: `## [version] - YYYY-MM-DD` with Added / Changed /
 Fixed / Removed sections.
 
+## [Unreleased] — Spec next, *Installable site*
+
+### Added
+
+- `public/manifest.webmanifest`, install icons in `public/icons/` and the manifest, Apple touch icon and
+  web app meta tags in `index.html`: the game installs on Android Chrome and iOS Safari. No service worker.
+
 ## [Unreleased] — Spec next, *SEO baseline*
 
 ### Added

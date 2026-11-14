@@ -84,6 +84,18 @@ Detail in [`specs/next-attract-mode/tasks.md`](../specs/next-attract-mode/tasks.
 
 **Verification:** `npm run check` → typecheck clean, 13 files, 219 tests, build clean; `dist/` holds the four files.
 
+## Spec next — Installable site
+
+| Task | Label | Covers | State |
+| :--- | :--- | :--- | :--- |
+| T-PWA.01 `tests/pwa-install.test.ts` written first and seen failing | `[A]` | REQ-PWA.01 … .05 | Done |
+| T-PWA.02 `public/manifest.webmanifest` and `public/icons/` from the favicon disc | `[A]` | REQ-PWA.01 … .03 | Done |
+| T-PWA.03 Head tags in `index.html` | `[A]` | REQ-PWA.04 | Done |
+| T-PWA.04 Build and Chrome installability check | `[A]` | REQ-PWA.01 … .05 | Done |
+| T-PWA.05 After the merge: live manifest, install on Android and iOS | `[H]` | REQ-PWA.01 … .04 | Open, needs the owner's phones |
+
+**Verification:** `npm run check` → typecheck clean, 14 files, 226 tests, build clean; `dist/` holds the manifest and four icons; Chrome reports no installability error.
+
 ## Open
 
 | Task | Label | Notes |
